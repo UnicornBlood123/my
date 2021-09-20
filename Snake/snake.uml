@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Diagram>
+  <ID>JAVA</ID>
+  <OriginalElement>com.example.snake</OriginalElement>
+  <nodes>
+    <node x="649.0" y="839.0">com.example.snake.ExampleInstrumentedTest</node>
+    <node x="0.0" y="839.0">com.example.snake.SnakeCoreKt</node>
+    <node x="460.0" y="839.0">com.example.snake.GameActivityKt</node>
+    <node x="453.0" y="540.0">com.example.snake.BuildConfig</node>
+    <node x="243.0" y="0.0">com.example.snake.SoundManager</node>
+    <node x="234.0" y="839.0">com.example.snake.Info</node>
+    <node x="567.0" y="0.0">com.example.snake.PartOfTail</node>
+    <node x="0.0" y="540.0">com.example.snake.ViewCoordinate</node>
+    <node x="820.0" y="540.0">com.example.snake.menu_game</node>
+    <node x="0.0" y="0.0">com.example.snake.GameActivity</node>
+    <node x="0.0" y="960.0">com.example.snake.ExampleUnitTest</node>
+    <node x="671.0" y="540.0">com.example.snake.Direction</node>
+    <node x="231.0" y="540.0">com.example.snake.SnakeCore</node>
+  </nodes>
+  <notes />
+  <edges />
+  <settings layout="Hierarchic Group" zoom="1.0" x="603.0" y="419.66666666666663" />
+  <SelectedNodes />
+  <Categories>
+    <Category>Fields</Category>
+    <Category>Methods</Category>
+    <Category>Inner Classes</Category>
+    <Category>Properties</Category>
+  </Categories>
+  <SCOPE>All</SCOPE>
+  <VISIBILITY>private</VISIBILITY>
+</Diagram>
+
