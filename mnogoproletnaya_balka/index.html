@@ -1,0 +1,262 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <title>Конечно-элементный анализ многопролетной балки</title>
+</head>
+<body>
+  <h1>Web-тренажёр</h1>
+  <h1>Конечно-элементный анализ многопролетной балки</h1>
+  <table class="menuTable">
+    <td class=menuTd>
+      <ul>
+        <li><button id='red'>Параметры балки</button>
+          <ul>
+            <div id="podMenu">
+              <li><button id='1'>Стержень</button>
+                <div>
+                  <table class="inputTable" id="inputTable1">
+                    <tr>
+                      <td>
+                        <div>
+                          Длина:
+                          <input type="number" value="0" min="0.1" step="0.1" oninput="handleChange3(this)"
+                            id="inLineL">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td>
+                        <div>
+                          Толщина:
+                          <input type="number" value="0.3" min="0.1" step="0.1" oninput="handleChange(this)"
+                            id="inLine">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="inButt" id="inButt1">
+                        <button id="lineButt"></button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+              <li><button id='2'>Узел</button>
+                <ul>
+                  <div id="podMenu2">
+                    <li><button id='3'>Жёсткое сопряжение</button>
+                      <div>
+                        <table class="inputTable" id="inputTable3">
+                          <tr>
+                            <td>
+                              <div>Радиус:
+                                <input type="number" value="20" min="5" oninput="handleChange2(this)" id="inCircle">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="inButt" id="inButt3">
+                              <button id="circleButt"></button>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li><button id='4'>Шарнирное опирание</button>
+                      <div>
+                        <table class="inputTable" id="inputTable4">
+                          <tr>
+                            <td>
+                              <div>
+                                Толщина:
+                                <input type="number" value="0.1" min="0.1" step="0.1" oninput="handleChange(this)"
+                                  id="inHSharnir">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>Радиус:
+                                <input type="number" value="20" min="5" oninput="handleChange2(this)"
+                                  id="inCircleSharnir">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="inButt" id="inButt4">
+                              <button id="sharnirButt"></button>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <li><button id='5'>Нагрузка</button>
+                <ul>
+                  <div id="podMenu5">
+                    <li><button id='6'>Распределённая нагрузка</button>
+                      <div>
+                        <table class="inputTable" id="inputTable6">
+                          <tr>
+                            <td>
+                              <div>
+                                Толщина:
+                                <input type="number" value="0.1" min="0.1" step="0.1" oninput="handleChange(this)"
+                                  id="inHRaspNagr">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>Нагрузка,кН/м:
+                                <input type="number" value="0" min="0" step="1" oninput="handleChange4(this)"
+                                  id="inRaspNagr">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="inButt" id="inButt6">
+                              <button id="raspNagrButt"></button>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                    <li><button id='7'>Узловая нагрузка</button>
+                      <div>
+                        <table class="inputTable" id="inputTable7">
+                          <tr>
+                            <td>
+                              <div>
+                                Толщина:
+                                <input type="number" value="0.1" min="0.1" step="0.1" oninput="handleChange(this)"
+                                  id="inHYzlNagr">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td>
+                              <div>Нагрузка,кН:
+                                <input type="number" value="0" min="0" step="1" id="inYzlNagr"
+                                  oninput="handleChange4(this)">
+                              </div>
+                            </td>
+                          </tr>
+                          <tr>
+                            <td class="inButt" id="inButt7">
+                              <button id="yzlNagrButt"></button>
+                            </td>
+                          </tr>
+                        </table>
+                      </div>
+                    </li>
+                  </div>
+                </ul>
+              </li>
+              <li><button id='8'>Консольное защемление</button>
+                <div>
+                  <table class="inputTable" id="inputTable8">
+                    <tr>
+                      <td>
+                        <div>
+                          Толщина:
+                          <input type="number" value="0.1" min="0.1" step="0.1" oninput="handleChange(this)"
+                            id="inConsol">
+                        </div>
+                      </td>
+                    </tr>
+                    <tr>
+                      <td class="inButt" id="inButt8">
+                        <button id="consolButt"></button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+            </div>
+          </ul>
+        </li>
+        <li><button id='file'>Схема</button>
+          <ul>
+            <div id="podFile">
+              <li><button id='11'>Сохранить схему</button>
+                <div class="file" id="save">
+                  <table class="inputTable" id="inputTable11">
+                    <tr>
+                      <td>
+                        <div><input id="nameFile" type="text"></div>
+                        <div><button id="buttonSave">Сохранить</button></div>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+              <li><button id='12'>Загрузить схему</button>
+                <div class="file" id="load">
+                  <table class="inputTable" id="inputTable12">
+                    <tr>
+                      <td>
+                        <input id="myFile" type="file" accept=".txt">
+                        <button id="buttonLoad">Загрузить</button>
+                      </td>
+                    </tr>
+                  </table>
+                </div>
+              </li>
+              <li><button id='13'>Очистить схему</button></li>
+            </div>
+          </ul>
+        </li>
+      </ul>
+    </td>
+    <td style="vertical-align:top">
+      <div class="canvas">
+        <canvas id="paint-can" width=1400 height=700> </canvas>
+        <canvas id="can" hidden> </canvas>
+        <img id="source" src="pic/gread.png" hidden></img>
+        <div class="right-click">
+          <ul class="right-click-menu">
+            <li id='li-2'>Удалить выделенное (del)</li>
+          </ul>
+        </div>
+      </div>
+    </td>
+    </tr>
+  </table>
+  <link rel="stylesheet" href="index.css">
+  <script src="index.js"></script>
+  <script>
+    window.onload = function () {
+      tableView();
+    };
+    function handleChange(input) {
+      if (input.value < 0.1) input.value = 0.1;
+    }
+    function handleChange2(input) {
+      if (input.value < 10) input.value = 10;
+    }
+    function handleChange3(input) {
+      if (input.value < 0.1) input.value = 0.1;
+    }
+    function handleChange4(input) {
+      if (input.value < 0) input.value = 0;
+    }
+    const menuArea = document.querySelector("#paint-can");
+    const menu = document.querySelector(".right-click-menu");
+    menuArea.addEventListener("contextmenu", event => {
+      event.preventDefault();
+      menu.style.top = `${event.clientY}px`;
+      menu.style.left = `${event.clientX}px`;
+      menu.classList.add("active");
+    }, false);
+    document.addEventListener("click", event => {
+      if (event.button !== 2) {
+        menu.classList.remove("active");
+      }
+    }, false);
+  </script>
+</body>
+</html>
